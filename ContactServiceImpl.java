@@ -17,6 +17,12 @@ public class ContactServiceImpl extends UnicastRemoteObject implements ContactSe
         System.out.println("Contato adicionado: " + name + ", " + email + ", " + phone);
     }
 
+    @Override
+    public List<String> listarContatos() throws RemoteException {
+        return contatos;
+    }
+
+
     private static class Contact {
         private String name;
         private String email;
