@@ -1,5 +1,4 @@
 package cliente;
-
 import java.rmi.Naming;
 import java.util.List;
 import interfaces.InterfaceContatoServidor;

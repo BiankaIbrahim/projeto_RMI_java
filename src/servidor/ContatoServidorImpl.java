@@ -3,7 +3,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
-
 import src.inteface.InterfaceContatoServidor;
 import src.modelo.Contato;
 
@@ -26,4 +25,8 @@ public class ContatoServidorImpl extends UnicastRemoteObject implements Interfac
         return contatos;
     }
 
+    @Override
+    public boolean removerContato(String nome) throws RemoteException {
+        return contatos.removeIf(contato -> contato.getNome().startsWith(nome + " - "));
+    }
 }
