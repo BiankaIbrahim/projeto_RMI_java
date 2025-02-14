@@ -1,3 +1,4 @@
+package src.modelo;
 
 import java.io.Serializable;
 
