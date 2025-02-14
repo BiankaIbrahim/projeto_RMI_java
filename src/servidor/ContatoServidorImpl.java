@@ -27,6 +27,6 @@ public class ContatoServidorImpl extends UnicastRemoteObject implements Interfac
 
     @Override
     public boolean removerContato(String nome) throws RemoteException {
-        return contatos.removeIf(contato -> contato.getNome().startsWith(nome + " - "));
-    }
+        return contatos.removeIf(contato -> contato.getName().equalsIgnoreCase(nome.trim()));
+}
 }
