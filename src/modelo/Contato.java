@@ -43,4 +43,5 @@ public class Contato implements Serializable {
     public String toString() {
         return "Nome: " + name + ", Email: " + email + ", Telefone: " + phone;
     }
+
 }

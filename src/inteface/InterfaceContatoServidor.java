@@ -11,4 +11,6 @@ public interface InterfaceContatoServidor extends Remote {
     List<Contato> listarContatos() throws RemoteException;
     
     boolean removerContato(String nome) throws RemoteException;
+
+    boolean atualizarContato(String nomeAntigo, String novoNome, String novoEmail, String novoTelefone) throws RemoteException;
 }

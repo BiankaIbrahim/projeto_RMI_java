@@ -28,5 +28,20 @@ public class ContatoServidorImpl extends UnicastRemoteObject implements Interfac
     @Override
     public boolean removerContato(String nome) throws RemoteException {
         return contatos.removeIf(contato -> contato.getName().equalsIgnoreCase(nome.trim()));
-}
+    }
+        @Override
+        public boolean atualizarContato(String nomeAntigo, String novoNome, String novoEmail, String novoTelefone) throws RemoteException {
+            for (Contato contato : contatos) {
+                if (contato.getName().equalsIgnoreCase(nomeAntigo)) {
+                    contato.setName(novoNome);
+                    contato.setEmail(novoEmail);
+                    contato.setPhone(novoTelefone);
+                    return true; // Contato atualizado com sucesso
+                }
+            }
+            return false; // Contato não encontrado
+        }
+    
+
+    
 }
